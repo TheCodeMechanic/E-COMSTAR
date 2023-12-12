@@ -1,0 +1,7 @@
+create table user(user_name varchar(255), user_email varchar(255) primary key,user_password varchar(255),user_phone_number bigint(20) not null);
+
+create table artist ( artist_emailid varchar(255) primary key,artist_address varchar(255),artist_gender varchar(255),artist_genre varchar(255),artist_name varchar(255),artist_password varchar(255),artist_phone_number bigint(20) not null);
+
+create table order1(order_id int primary key, booked_date varchar(255) ,booked_time varchar(255),order_date varchar(255),order_price bigint(20) not null,venue varchar(255),artist_artist_emailid varchar(255),user_user_email varchar(255),foreign key(artist_artist_emailid) references artist(artist_emailid),foreign key(user_user_email) references user(user_email));
+
+create table adate_avail(id int(11) primary key,from_date datetime(6),to_Date datetime(6),artistfees float not null,artist_artist_emailid varchar(255),foreign key(artist_artist_emailid) references artist(artist_emailid));
